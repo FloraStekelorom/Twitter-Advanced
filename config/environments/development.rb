@@ -7,7 +7,7 @@ Rails.application.configure do
 
   # Using the local settings for Active Storage
   config.active_storage.service = :amazon
-  
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
