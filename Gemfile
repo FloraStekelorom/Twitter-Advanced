@@ -3,12 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'bundler', '~> 2.0.2'
+
 gem 'aws-sdk', '~> 3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'rails', '~> 5.2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -52,6 +53,9 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.11'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
+
+  # Use sqlite3 as the database in development and test environment
+  gem 'sqlite3'
 end
 
 group :development do
@@ -69,4 +73,9 @@ group :test do
   # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
+end
+
+group :production do
+  # Use pg as the database in production environment
+  gem 'pg', '~> 1.1.3'
 end
